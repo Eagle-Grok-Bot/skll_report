@@ -1,0 +1,193 @@
+                ML4Jets 2026
+                Vienna, Austria
+
+
+
+
+ Amber: Self-Attention Muon
+Track Reconstruction in JUNO
+            Xiaoying Lu (IHEP China)
+       on behalf of the JUNO Collaboration
+                    2026/9/15
+Motivation and physical picture
+• JUNO: 20-kton liquid scintillator detector determining
+  the Neutrino Mass Ordering
+
+• Cosmic-muon-produced 9Li /8 He isotopes mimic the
+  Inverse Beta Decay signal, limiting this physics
+  sensitivity
+• Muon track reconstruction for background suppression
+  • TT: Multiple layers of plastic scintillator strips ->
+    precisely detect subset muon tracks
+  • WCD PMTs: Detects Cherenkov light -> muon hit
+    patterns
+  • CD PMTs: Detects scintillation light -> high-
+    multiplicity muon hit patterns
+                                                 2
+                                                            PMTs: photomultiplier tubes
+Features
+• Muon is observed as a detector-wide pattern of PMT hits carrying spatial, timing and
+  charge information
+
+                    Single track                             Double track
+
+
+WCD
+
+
+
+
+CD
+
+           Charge                  Time              Charge                 Time
+                                          3
+Amber model architecture
+(Attention Mechanism Based Event Reconstruction)
+
+• Model the correlations among PMT hits
+• Learning long-range dependency
+• Output track parameters
+
+
+
+
+                                          4
+Amber overview
+                               WCD PMTs                           CD PMTs
+                              Cherenkov light                 Scintillation light
+
+            Amber-C
+                                  Done                             To do
+       Classi cation
+
+            Amber-S                                                    Inspired by DeepSeek-OCR [1]:
+                                                                       • Reduce training time for large
+                                  Done Basic reconstruction        Done CD PMT hits
+Single-track reconstruction
+                                                                       • Improve reconstruction
+                                                                         performance
+            Amber-D
+                                  Done Complex topology            To do                  [1] arXiv:2510.18234
+Double-track reconstruction
+
+
+                                             5
+       fi
+Data-driven method
+• Learn directly from real detector response
+• Label: Precise TT tracks from real data
+• Limited coverage of TT => Augmentation
+  • Random 3D rotation
+      {ri, pin, pout}             {Rri, Rpin, Rpout}
+                        R∈SO(3)
+
+
+  • Same rotation applied to PMT positions
+   and track labels
+  • New random 3D rotation for every sample,
+   every epoch
+
+                                                6
+                                                       Before rotation   After rotation
+Amber-S
+• Training data
+                                               PMT Hit           Muon Track
+  • WCD PMT hit feature: (t, q, x, y, z)
+                                               (t, q, x, y, z)    p(3), d(3)
+  • Label: TT tracks
+
+
+• Loss function
+
+
+
+                                           7
+Amber-S performance
+• Accurately reconstructs single                     Mid-point distance    Angle
+  through-going muons from WCD
+  hit features                         Traditional        1.00 m          2.27 deg
+
+                                       Amber-S            0.56 m          1.47 deg
+
+
+
+
+                                   8
+Amber-D
+• Single track + Single track → paired Double track
+  • Label uses TT; feature uses hit pattern
+  • q = q1 + q2 ; t = min(t1, t2)
+  • 60 times the MC data
+  • 3D rotation augmentation
+• Loss function
+
+  • Permutation-invariant midpoint loss over two track assignments
+
+                                          9
+Amber-D performance
+• Better agreement with TT track geometry
+  • Fewer total track-distance pairing modes
+• Improved spallation neutron suppression
+
+
+
+
+                                         10
+    Amber-OCR
+    • Introduce OCR to the CD model
+      • Partition tokens into windows
+      • Attention → local attention + convolution + global attention
+          O(S 2)           O(S*W)               3*3        O(S′2)
+
+
+          Symbol   Value        Meaning
+            S      17612        CD hits
+            W       512       window size
+            S’     1954     tokens after conv
+
+
+                                                                       W×W   S'×S'
+
+                                                      11
+￼
+Amber-OCR performance
+• CD-based Single-Muon Reconstruction
+                                               Model      Angle     Mid-point distance
+
+
+  • Faster training
+                                             Amber-WCD   1.48 deg        0.56 m
+
+                                                          Un-optimized
+  • Higher reconstruction performance
+                                             Amber-CD
+
+                                             Amber-OCR   1.13 deg        0.41 m          Better
+
+
+
+
+                                        12
+Summary
+• Fully data-driven training strategy using real TT-labeled events
+• Amber-S and Amber-D
+  • Best-performing WCD-based reconstruction method
+  • Adopted in JUNO’s o cial reconstruction
+  • Used in JUNO physics results presented at Neutrino 2026
+• Amber-OCR shows promising performance on high-multiplicity CD PMT inputs
+  • ∼ 5 × faster training
+  • Further improved reconstruction accuracy
+• Extending Amber to more reconstruction tasks and advanced architectures
+                                                                      Thanks!
+                                       13
+                                       ffi
+Back Up
+Learning-rate sweep
+• Stable optimization over a broad LR range
+
+
+
+
+               Amber-S                        Amber-D
+                                        15
+

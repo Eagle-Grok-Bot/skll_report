@@ -1,0 +1,56 @@
+Cosmic Muon Track Reconstruction in JUNO
+Xiaoying Lu(Institute of High Energy Physics) & Junya Wei(Shandong University)
+On behalf of the JUNO collaboration                      luxy@ihep.ac.cn weijunya@mail.sdu.edu.cn
+
+                           Motivation                                                                                          Muon Reconstruction methods
+JUNO: 20-kton liquid                                                                                        Traditional methods
+scintillator detector
+determining the                                                                               • Charge-based
+Neutrino Mass                                                                                   • WCD charge cluster
+Ordering (NMO).
+                                                                                              • Timing-based                                                         (Attention Mechanism-Based Event Reconstructor)
+• 9Li /8 He Background:
+  Cosmic-muon-                                                                                  • Joint CD & WCD χ 2 minimization of                                 • Transformer-based model
+  produced 9Li /8 He                                                                                 FHT(First Hit Time) residuals
+                                                                                                                                                                     • Data-driven training with TT reference tracks
+  isotopes mimic the
+  Inverse Beta Decay
+  (IBD) signal, limiting                                                                                                    Edwin
+  this physics sensitivity.
+                                                                                              (Event reconstruction based on Deep-learning and
+• Muon    Reconstruction:                                                                     Waveform INformation) [2]
+    • CD & WCD: Provide independent or joint muon track                                       • HEALPix-based spherical GNN with rotation-equivariant
+      reconstruction for detector-wide veto strategies.                                         graph convolutions
+    • TT: Provides high-precision tracks (0.2° angular resolution)                            • Extracts spatial features from PMT waveforms
+      as an external reference, despite limited coverage.                                     • Data-driven training with TT reference tracks
+
+
+                                        Reconstruction performance                                                                                                         Cosmogenic suppression
+ • Angular Spectra:
+   The reconstructed direction
+                                                                                                                                                                             JUNO Work in Progress.        JUNO Work in Progress.
+ • TT Reference Tracks Comparison:
+   Common benchmark for evaluating                                                                                                                                                June 2026                     June 2026
+   angular and spatial reconstruction                      JUNO Work in Progress.
+   residuals.
+                                                                June 2026
+ • Good agreement among independent
+   reconstruction frameworks                                                                                    JUNO Work in Progress.
+                                                                                                                                                                  • Physics Benchmark:
+                                                                                                                     June 2026                                       Muon–SPN (SPallation Neutron) distance distributions within a
+                                                                                                                                                                     2 ms time window.
+                                                                                                                                                                  • Cosmogenic Background Rejection:
+                                                                                                                                                                     Provides direct guidance for veto optimization and background
+                                                                                                                                                                     suppression.
+                                                                                                                      JUNO Work in Progress.
+                                                                    JUNO Work in Progress.                                 June 2026
+                                                                         June 2026
+                                                                                                                                                                                          Summary
+                                                                                                                                                                 ‣ Independent traditional and machine learning approaches
+                                                                                                                                                                    establish a robust and validated muon tracking capability for
+                                                                                                                                                                    JUNO.
+                                                                                                                                                                 ‣ Muon–SPN correlations provide direct guidance for optimizing
+                                                                                                                                                                   cosmogenic 9Li /8 He background suppression.
+  [1] Abusleme A, Adam T, Adamowicz K, et al. Initial performance results of the JUNO detector[J]. Chinese Physics C, 2026, 50(4): 043001.
+  [2] Zekun Yang et al. “First attempt of directionality reconstruction for atmospheric neutrinos in a large homogeneous liquid scintillator detector”. Phys. Rev. D 109.5 (2024)
+
