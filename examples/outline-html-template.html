@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Report outline — [MEETING] — awaiting confirmation</title>
+  <style>
+    :root { --bg:#0f1419; --card:#1a2332; --text:#e7ecf3; --muted:#9aa8bc; --accent:#5b9fd4; --line:#2a3548; }
+    * { box-sizing: border-box; }
+    body { margin:0; font:15px/1.5 system-ui,sans-serif; background:var(--bg); color:var(--text); }
+    header, main { max-width:920px; margin:0 auto; padding:1.25rem 1rem; }
+    header { border-bottom:1px solid var(--line); }
+    h1 { font-size:1.35rem; margin:0 0 .35rem; }
+    .meta { color:var(--muted); font-size:.9rem; }
+    .takeaway { margin-top:.75rem; padding:.75rem 1rem; background:var(--card); border-left:3px solid var(--accent); border-radius:4px; }
+    h2 { font-size:1.1rem; margin:1.5rem 0 .75rem; color:var(--accent); }
+    ol.outline { padding-left:1.25rem; }
+    ol.outline li { margin:.25rem 0; }
+    .page { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:1rem 1.1rem; margin:.75rem 0; }
+    .page h3 { margin:0 0 .5rem; font-size:1rem; }
+    .page ul { margin:.35rem 0; padding-left:1.2rem; }
+    .fig, .tbd { color:var(--muted); font-size:.9rem; }
+    footer { max-width:920px; margin:2rem auto; padding:1rem; color:var(--muted); font-size:.85rem; border-top:1px solid var(--line); }
+    .badge { display:inline-block; background:#3d2a14; color:#f0c674; padding:.15rem .5rem; border-radius:4px; font-size:.8rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <p class="badge">STEP A — awaiting user confirmation</p>
+    <h1>[Working title]</h1>
+    <p class="meta">[Meeting name] · [dates, timezone] · [talk / poster] · [N] min · version [v0]</p>
+    <div class="takeaway"><strong>Direction / takeaway:</strong> [one sentence agreed with user]</div>
+  </header>
+  <main>
+    <h2>Full outline</h2>
+    <ol class="outline">
+      <li>Title</li>
+      <li>Motivation &amp; physical picture</li>
+      <li>…</li>
+    </ol>
+
+    <h2>Per-page core content</h2>
+
+    <section class="page" id="p1">
+      <h3>Slide / Panel 1 — Title</h3>
+      <p><strong>Core content</strong></p>
+      <ul>
+        <li>[What this page must convey]</li>
+        <li>[…]</li>
+      </ul>
+      <p class="fig"><strong>Figure:</strong> none / F1 — [intent]</p>
+      <p class="tbd"><strong>Open:</strong> [TBD questions]</p>
+    </section>
+
+    <section class="page" id="p2">
+      <h3>Slide / Panel 2 — …</h3>
+      <ul>
+        <li>…</li>
+      </ul>
+      <p class="fig"><strong>Figure:</strong> …</p>
+    </section>
+  </main>
+  <footer>
+    Do not start Step B (per-page drafting / collecting PNG·PDF) until the user confirms this outline HTML.
+    Template: examples/outline-html-template.html in Eagle-Grok-Bot/skll_report.
+  </footer>
+</body>
+</html>
