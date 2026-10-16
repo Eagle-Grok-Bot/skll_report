@@ -1,16 +1,27 @@
 ---
 name: HEP progress report
 description: >-
-  Use when planning or drafting JUNO/HEP conference reports: intake meeting
-  calendar and report plan, discuss structure, collect and discuss result
-  figures (PDF/PNG) with the user, then schedule nightly draft content—Amber
-  talk/poster style is the baseline.
+  Use when planning or drafting JUNO/HEP conference reports: align direction
+  with the user, deliver an outline HTML (per-page core content) for
+  confirmation, then only after approval draft page-by-page with figures
+  (PDF/PNG)—Amber talk/poster style is the baseline.
 ---
-# HEP progress report (Amber baseline + venue workflow)
+# HEP progress report (Amber baseline + two-step gate)
 
-Help the user prepare conference/collaboration reports for neutrino/HEP work. **Voice and density follow the user’s own Amber reports** (physics-first bullets, method variants, data-driven training, numbers vs baselines, physics impact, short summary). Different meetings may need different *structures*; never skip the intake + structure discussion.
+Help the user prepare conference/collaboration reports for neutrino/HEP work. **Voice and density follow the user’s own Amber reports** (physics-first bullets, method variants, data-driven training, numbers vs baselines, physics impact, short summary).
 
-Reports almost always need **result distribution / performance plots**. Treat figures as first-class content: discuss meaning with the user, ask for PDF or PNG files, then place them in the draft. Do not invent plots or caption claims the user has not confirmed.
+## Hard gate (do not skip)
+
+Work in **two steps**. Never start per-page drafting, figure collection, or nightly deep writing until **Step A** is done and the user has **confirmed** the outline HTML.
+
+| Step | What you produce | User must… |
+| --- | --- | --- |
+| **A — Direction + outline HTML** | Discuss report direction → one HTML file: full outline + each page/panel’s **core content** | Confirm or edit the HTML |
+| **B — Per-page prep** | Page-by-page bullets, figures (discuss → PDF/PNG → place), nightly schedule | Confirm each page / send plots as needed |
+
+If the user asks to “just write the slides,” still run Step A first unless they explicitly waive the outline HTML for this meeting.
+
+Reports almost always need **result distribution / performance plots**. In Step B, discuss meaning with the user, ask for PDF or PNG, then place them. Do not invent plots or caption claims the user has not confirmed.
 
 ## Baseline style (non-negotiable)
 User’s own materials — always the style floor:
@@ -19,125 +30,115 @@ User’s own materials — always the style floor:
 
 Prefer the user’s Indico links when they shared them; local repo mirrors live in `examples/` and `refs/` of Eagle-Grok-Bot/skll_report.
 
-If other conference skills or generic slide guides conflict with Amber (long prose, marketing tone, burying motivation), **prefer Amber**.
+If other conference skills or generic slide guides conflict with Amber, **prefer Amber**.
 
-## Phase 0 — Intake (do this first)
-Before writing slides/abstract/poster copy, gather or confirm:
+---
 
-1. **Meeting calendar**: conference name, dates, timezone, talk vs poster vs abstract-only, allotted minutes, deadline (abstract / slides upload).
-2. **Report plan**: working title, one-sentence takeaway, what is *new* since last report, target audience (ML / neutrino / mixed).
-3. **Constraints**: collaboration approval, WIP figures, secrets not to share, language (EN default for Indico).
-4. **Assets on hand**: key numbers, **plots already available or still WIP**, baselines, author list.
-5. **Reference links**: prior talks/posters/Indico pages the user wants you to open and match.
+# STEP A — Direction + outline HTML (first)
 
-If anything material is missing, ask in a short checklist (or widget). Do **not** invent a full deck until structure is agreed.
+## A0 — Intake + direction
+Gather or confirm:
 
-## Phase 1 — Discuss structure (per meeting)
-Propose 1–2 structure options tailored to venue length, then wait for the user’s pick/edits.
+1. **Meeting calendar**: conference name, dates, timezone, talk vs poster vs abstract-only, allotted minutes, deadline.
+2. **Report direction** (discuss openly before outlining):
+   - Working title and one-sentence takeaway
+   - What is *new* since last report
+   - Audience (ML / neutrino / mixed) and tone (progress vs conference)
+   - Must-include vs nice-to-have topics; what to cut for time
+3. **Constraints**: collaboration approval, WIP figures, secrets, language (EN default for Indico).
+4. **Assets / links**: numbers, plots status, author list, prior Indico pages to match.
 
-### Amber-native defaults (start here)
-**Talk (~15–20 min)** section spine:
-1. Title · 2. Motivation & physical picture · 3. Features/observables · 4. Architecture overview · 5. Model variants (Done/To do) · 6. Data-driven training · 7. Per-variant method · 8. Performance vs baselines · 9. Physics application · 10. Summary + outlook
+Ask in a short checklist or widget if anything material is missing. Do **not** write full slide prose yet.
 
-**Poster** panels: Motivation | Methods (traditional + ML) | Performance | Cosmogenic/physics benchmark | Summary + refs
+## A1 — Propose structure
+Propose 1–2 structure options tailored to venue length (Amber spine below), wait for pick/edits.
 
-**Indico abstract**: one dense paragraph — detector goal → background need → method/inputs → variants → training → key claim → impact.
+### Amber-native defaults
+**Talk (~15–20 min)**: Title → Motivation & physical picture → Features/observables → Architecture → Model variants (Done/To do) → Data-driven training → Per-variant method → Performance vs baselines → Physics application → Summary + outlook
 
-### Venue-length adaptations (optional overlays)
-Use only as *timing/length* overlays; keep Amber section *content* and tone:
-- **~10 min**: collapse variants onto 1–2 slides; 2–3 results max; still open with physics motivation.
-- **~15–18 min**: Amber spine + slightly more result slides; 2–3 main points only.
-- **Poster session**: Amber panels; large figures; minimal text.
-- **Internal progress**: Amber spine; may add “open issues / next week” instead of conference summary.
+**Poster panels**: Motivation | Methods (traditional + ML) | Performance | Cosmogenic/physics benchmark | Summary + refs
 
-You may **search** public conference-presentation skills or guides for length/font/upload rules — cite them as timing tips, not style replacements.
+**Indico abstract**: one dense paragraph — detector goal → background → method/inputs → variants → training → key claim → impact.
 
-Output of this phase: a numbered **agreed outline** the user has confirmed, including which slides/panels need figures.
+### Venue-length overlays (timing only)
+- **~10 min**: collapse variants; 2–3 results max; still open with physics.
+- **~15–18 min**: Amber spine + slightly more results; 2–3 takeaways.
+- **Poster**: large figures; minimal text.
+- **Internal progress**: may add “open issues / next week.”
 
-## Phase 1b — Figures: discuss, collect, place (required for result slides)
-HEP reports lean on **distributions and comparison plots**. Run this loop whenever the outline needs plots (often before or during nightly drafting).
+You may search public conference guides for length/font/upload rules — timing tips only, not style replacements.
 
-### 1. Discuss meaning (before asking for files)
-For each planned figure, confirm with the user in plain language:
-- **What** it shows (observable, residual, efficiency, rate, …)
-- **Why** it belongs on that slide/panel (claim it supports)
-- **Sample / selection** (MC vs data, cuts, energy/angle range)
-- **Axes, units, legend** (what curves/histograms mean)
-- **Key takeaway** the audience should read off the plot
-- **WIP / confidential?** (watermark, collaboration-only, do not share)
+## A2 — Deliver outline HTML (required artifact)
+After direction and structure are roughly agreed, produce a **single HTML file** the user can open in a browser. This is the gate artifact for Step B.
 
-If the user pastes an Indico/PDF/link to a prior report, open it and **ask** which plots to reuse or replace — do not copy captions blindly.
+**File naming**: `outline-<meeting-slug>-YYYYMMDD.html` (e.g. `outline-nu2026-20261016.html`) in the working report folder.
 
-### 2. Ask for files
-Ask the user to send each figure as **PNG** (preferred for slides/web) or **PDF** (vector, posters/LaTeX). Accept one file per message or a zip; keep original filenames when possible.
+**Must include**:
+1. Header: meeting name, dates, talk/poster, minutes, working title, one-sentence direction/takeaway.
+2. **Full outline** as a numbered list (slide or panel order).
+3. **Per page/panel card** for every item:
+   - Page number + title
+   - **Core content** (3–6 short bullets: what this page must convey — not full Amber prose yet)
+   - Planned figure slot(s) if any (`F?` id + one-line intent), or “no figure”
+   - Open questions / TBD for that page
+4. Optional footer: version + “Awaiting user confirmation before per-page drafting.”
 
-Track a short inventory, e.g.:
-| ID | Slide/panel | Meaning (agreed) | File | Status |
-| --- | --- | --- | --- | --- |
-| F1 | Perf vs baseline | θ residual, method vs traditional | `theta_res.png` | received |
-| F2 | Physics veto | live-time gain | — | waiting |
+Keep HTML self-contained (inline CSS), readable on laptop/phone. Use `examples/outline-html-template.html` in the skill repo as a starting layout.
 
-### 3. Place in the draft
-- Save received files under the working report folder (e.g. `figures/` next to the draft).
-- In talk/poster markdown use explicit slots: `[Figure F1: θ residual — method vs traditional]` plus the agreed one-line caption.
-- When building HTML/PDF/slides, embed the actual PNG/PDF; never leave a blank “result” claim without a figure or a clear TBD.
-- If a figure is still missing, keep the slot and mark **TBD — awaiting PNG/PDF from user**; do not fabricate histograms.
+Deliver the HTML to the user (attach / path / link). **Stop and wait** for confirmation or edits. Revise the HTML until they say the outline and per-page cores are OK.
 
-### 4. Re-check captions
-After placing, restate the takeaway in one bullet under the figure and confirm with the user before the final version.
+**Do not** enter Step B, collect figure files in bulk, or write full per-page drafts until that confirmation.
 
-## Phase 2 — Nightly content plan
-After structure is agreed, break the outline into a **night-by-night prep schedule** until the deadline (Asia/Shanghai unless user says otherwise).
+---
 
-For each night include:
-- Sections/slides to draft or revise
-- **Figures/numbers still needed** (ID from the inventory; PDF or PNG)
-- Stopping point (draft only / ready for collaborator review)
-- Optional: next-morning check (did numbers/plots arrive?)
+# STEP B — Per-page content (only after outline HTML confirmed)
 
-Offer to save this as a **routine** (e.g. nightly reminder + draft the next chunk) only after the user agrees.
+## B1 — Nightly / page order plan
+Break the **confirmed** outline into a schedule (Asia/Shanghai unless told otherwise). Each night or session: which pages, which figure IDs still needed, stopping point.
 
-Example shape (adapt dates):
-| Night | Deliverable | Needs from user |
-| --- | --- | --- |
-| N1 | Motivation + features bullets | none / one plot |
-| N2 | Architecture + variants map | Done/To do status |
-| N3 | Training + loss notes | label definition |
-| N4 | Performance slides + place F1–F3 | residual PNGs/PDFs |
-| N5 | Physics + summary; abstract polish | approval flags |
+Offer a **routine** for nightly reminders only after the user agrees.
 
-## Phase 3 — Draft in Amber voice
-When writing approved sections:
+## B2 — Figures: discuss, collect, place
+For each result page in the confirmed outline:
+
+1. **Discuss meaning** before asking for files: what / why on this page / sample & cuts / axes & legend / takeaway / WIP or confidential.
+2. If the user shares Indico/PDF links, open them and ask which plots to reuse — do not copy captions blindly.
+3. **Ask for PNG** (slides/web) or **PDF** (vector/poster/LaTeX). Track an inventory (`examples/figure-inventory-template.md`).
+4. Save under `figures/`; embed or mark `TBD — awaiting PNG/PDF`; never fabricate histograms.
+5. Re-check one-line captions with the user before final.
+
+## B3 — Draft each page in Amber voice
+Page by page (or night by night), expand core bullets into full Amber content:
 1. Physics first: detector goal → background → why reconstruction matters.
 2. Short `•` bullets; one idea each.
-3. Name subsystems (CD / WCD / TT) and what they measure.
+3. Name subsystems (CD / WCD / TT).
 4. Method family tree; Done / To do when useful.
 5. Architecture in plain words: inputs → backbone → outputs.
-6. Data-driven honesty: labels, coverage limits, augmentation, loss.
-7. Numbers with baselines (Traditional vs Method), **backed by placed figures** when claiming distributions.
-8. Physics benchmark (veto / SPN / live-time), not metrics alone.
+6. Data-driven honesty: labels, coverage, augmentation, loss.
+7. Numbers with baselines, **backed by placed figures** when claiming distributions.
+8. Physics benchmark (veto / SPN / live-time).
 9. Summary ≤ 4 bullets; WIP dated; no hype.
 10. Correct units/isotopes (`9Li/8He`, deg, m, ms).
 
-### Output formats
-- **Talk**: `## Slide N — Title` + bullets + `[Figure Fid: …]` placeholders or embedded paths
-- **Poster**: panel headings + bullets + large-figure slots
+### Output formats (Step B)
+- **Talk**: `## Slide N — Title` + bullets + `[Figure Fid: …]` or embedded paths
+- **Poster**: panel headings + large-figure slots
 - **Abstract**: Indico paragraph + title + keywords
+- Optional: later full HTML/PDF deck built from confirmed pages
+
 Language: match user; international Indico → English unless asked.
 
+---
+
 ## Quality checklist
-- [ ] Intake done; structure **confirmed by user**
-- [ ] Each result slide has discussed figure meaning + file status (received / TBD)
-- [ ] PNGs/PDFs placed or explicitly marked awaiting user upload
-- [ ] Captions match what the user agreed the plot shows
-- [ ] Nightly plan exists if deadline > 1 day away
-- [ ] Amber baseline followed (motivation → method → numbers → physics → summary)
-- [ ] Venue timing constraints respected
-- [ ] Numbers present or marked TBD
-- [ ] No secrets; WIP marked
+- [ ] Direction discussed with user
+- [ ] Outline HTML delivered with per-page core content
+- [ ] User **confirmed** outline HTML before Step B
+- [ ] Each result page: figure meaning discussed + file status
+- [ ] PNGs/PDFs placed or marked awaiting upload; captions agreed
+- [ ] Nightly/page plan if deadline > 1 day away
+- [ ] Amber baseline followed
+- [ ] Venue timing respected; numbers present or TBD; secrets/WIP marked
 
 ## External style notes (secondary)
-Useful only for length/logistics; never override Amber voice:
-- Scientific talk timing guides (~1 idea/slide; 2–3 takeaways per 15–20 min)
-- Neutrino-conference speaker notes (e.g. 16:9, large fonts, upload deadlines)
-- Generic presentation-builder / conference-materials skills: narrative arc OK; replace their section order with Amber spine unless user explicitly wants a different order for that venue
+Useful only for length/logistics; never override Amber voice or the Step A HTML gate.
