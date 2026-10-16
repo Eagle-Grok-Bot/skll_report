@@ -1,28 +1,27 @@
 # skll_report
 
-Reusable **HEP / JUNO progress-report** skill for Grok Bot (and humans), styled after Amber muon-reconstruction talks and posters.
+Grok Bot skill for **HEP / JUNO progress reports**, with the author’s own Amber talk & poster as the **style baseline**.
 
-## Install / use in Grok Bot
+## Workflow (required)
 
-1. Copy `SKILL.md` into a Bot skill, or tell your Bot to load this repo’s skill.
-2. Invoke when drafting Indico abstracts, talk outlines, or poster text.
-3. Point at style refs under `refs/` or the Indico links in `examples/`.
+1. **Intake** — meeting calendar, report plan, deadlines, assets  
+2. **Discuss structure** — adapt outline to that venue; user confirms  
+3. **Nightly plan** — what to draft each night until the deadline  
+4. **Draft** — Amber voice (physics-first bullets, variants, numbers, physics impact)
 
-Skill id (local Bot copy): `hep-progress-report`
+Other conference-presentation skills/guides may inform *timing/length*; they do **not** replace Amber tone or section spine unless the user says so for that meeting.
 
-## Contents
+## Style anchors (author’s reports)
+
+- Talk: https://indico.global/event/15240/contributions/165356/
+- Poster: https://indico.global/event/15740/contributions/147762/
+
+## Files
 
 | Path | What |
 | --- | --- |
-| `SKILL.md` | Recipe: section order, style rules, checklists |
-| `examples/` | Abstract + outline templates from Amber-style reports |
-| `refs/` | Optional local PDF/text snapshots of public Indico materials |
+| `SKILL.md` | Full recipe for Bots |
+| `examples/` | Talk / poster / abstract templates |
+| `refs/` | Text extracts + Indico PDF links |
 
-## Style anchors
-
-- Talk: [Amber: Self-Attention Muon Track Reconstruction in JUNO](https://indico.global/event/15240/contributions/165356/)
-- Poster: [Cosmic Muon Track Reconstruction in JUNO](https://indico.global/event/15740/contributions/147762/)
-
-## License
-
-Skill text: reuse freely for collaboration work. Referenced PDFs remain © their authors / JUNO; keep only if redistribution is allowed.
+Local Bot skill id: `hep-progress-report`
